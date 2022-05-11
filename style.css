@@ -32,3 +32,8 @@ button:hover {
     background-color: #575757;
     color: white;
 }
+
+th,
+td {
+    width: 200px
+}
