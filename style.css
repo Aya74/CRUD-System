@@ -27,3 +27,8 @@ button {
     height: 30px;
     transition: 1px;
 }
+
+button:hover {
+    background-color: #575757;
+    color: white;
+}
