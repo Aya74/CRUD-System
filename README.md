@@ -1,7 +1,7 @@
 # ✧ CRUD-System
 
 # ✧ Short description about the page:
-A system that allow the user to Add courses(Add the course name, course price and description ) <br>
+A system that allow the user to Add courses(Add the course name, course price and description) and display it in a table. <br>
 
 # ✧ The way of installation the project to run it locally:
 
