@@ -40,5 +40,15 @@ td {
 
 .delete {
     border: 1px solid red;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin-left: 51px;
+    margin-top: 10px;
+    transition:.4s all;
+}
+
+.delete:hover{
+    background-color: transparent;
     color: red;
 }
