@@ -52,3 +52,18 @@ td {
     background-color: transparent;
     color: red;
 }
+
+.update {
+    border: 1px solid rgb(131, 186, 231);
+    background-color: rgb(131, 186, 231);
+    color: white;
+    border-radius: 5px;
+    margin-left: 51px;
+    margin-top: 10px;
+    transition:.4s all;
+}
+
+.update:hover{
+    background-color: transparent;
+    color: rgb(131, 186, 231);
+}
