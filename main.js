@@ -49,7 +49,7 @@ function displayData() {
       <td>${courses[i].price}</td>
       <td>${courses[i].description}</td>
       <td><button class="update">Update</button></td>
-      <td><button class="delete">Delete</button></td>
+      <td><button class="delete" onclick="deleteCourse(${i})">Delete</button></td>
       </tr>`;
   }
   data.innerHTML = result;
@@ -60,4 +60,10 @@ function clearForm() {
   for (i = 0; i < inputs.length; i++) {
     inputs[i].value = "";
   }
+}
+
+//create function that allow the user to delete course inforamtion (from the table)
+function deleteCourse(index){
+  courses.splice(index,1);
+  displayData();
 }
