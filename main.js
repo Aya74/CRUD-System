@@ -3,16 +3,24 @@ var courseNameInput = document.getElementById("courseName");
 var courseCategoryInput = document.getElementById("courseCategory");
 var coursePriceInput = document.getElementById("coursePrice");
 var courseDescriptionInput = document.getElementById("courseDescription");
-//butyons var
+//buttons var
 var addBtn = document.getElementById("click");
+var clearBtn = document.getElementById("clear");
 //Array to save objects
 var courses = [];
 //var to catch table body
 var data = document.getElementById("data");
+//var to catch all the inputs
+var inputs = document.getElementsByClassName("inputs");
 
 addBtn.onclick = function () {
   addCourse();
   displayData();
+  clearForm();
+};
+
+clearBtn.onclick = function () {
+  clearForm();
 };
 
 // create function add course to add course on click button Add course
@@ -45,4 +53,11 @@ function displayData() {
       </tr>`;
   }
   data.innerHTML = result;
+}
+
+//create function to clear all the inputs
+function clearForm() {
+  for (i = 0; i < inputs.length; i++) {
+    inputs[i].value = "";
+  }
 }
