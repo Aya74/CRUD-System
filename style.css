@@ -35,10 +35,34 @@ button:hover {
 
 th,
 td {
-    width: 200px
+    width: 200px;
+    text-align: center;    
 }
 
 .delete {
     border: 1px solid red;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition:.4s all;
+}
+
+.delete:hover{
+    background-color: transparent;
     color: red;
+}
+
+.update {
+    border: 1px solid rgb(131, 186, 231);
+    background-color: rgb(131, 186, 231);
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition:.4s all;
+}
+
+.update:hover{
+    background-color: transparent;
+    color: rgb(131, 186, 231);
 }

@@ -48,8 +48,8 @@ function displayData() {
       <td>${courses[i].category}</td>
       <td>${courses[i].price}</td>
       <td>${courses[i].description}</td>
-      <td></td>
-      <td></td>
+      <td><button class="update">Update</button></td>
+      <td><button class="delete">Delete</button></td>
       </tr>`;
   }
   data.innerHTML = result;
