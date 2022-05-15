@@ -35,7 +35,8 @@ button:hover {
 
 th,
 td {
-    width: 200px
+    width: 200px;
+    text-align: center;    
 }
 
 .delete {
@@ -43,7 +44,6 @@ td {
     background-color: red;
     color: white;
     border-radius: 5px;
-    margin-left: 51px;
     margin-top: 10px;
     transition:.4s all;
 }
@@ -58,7 +58,6 @@ td {
     background-color: rgb(131, 186, 231);
     color: white;
     border-radius: 5px;
-    margin-left: 51px;
     margin-top: 10px;
     transition:.4s all;
 }
