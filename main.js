@@ -75,5 +75,6 @@ function clearForm() {
 //create function that allow the user to delete course inforamtion (from the table)
 function deleteCourse(index){
   courses.splice(index,1);
+  localStorage.setItem("coursesList",JSON.stringify(courses));
   displayData();
 }
