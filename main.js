@@ -13,6 +13,14 @@ var data = document.getElementById("data");
 //var to catch all the inputs
 var inputs = document.getElementsByClassName("inputs");
 
+//Get Item from local storage then display data
+if(localStorage.getItem("coursesList") == null){
+var courses = [];
+}else {
+var courses = JSON.parse(localStorage.getItem("coursesList")) ;
+displayData();
+}
+
 addBtn.onclick = function () {
   addCourse();
   displayData();
@@ -34,6 +42,8 @@ function addCourse() {
   };
   //Add object course to array courses
   courses.push(course);
+  //Add array courses to localstorage
+  localStorage.setItem("coursesList",JSON.stringify(courses));
 }
 
 // create function display data on click button Add course
