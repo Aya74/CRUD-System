@@ -14,11 +14,11 @@ var data = document.getElementById("data");
 var inputs = document.getElementsByClassName("inputs");
 
 //Get Item from local storage then display data
-if(localStorage.getItem("coursesList") == null){
-var courses = [];
-}else {
-var courses = JSON.parse(localStorage.getItem("coursesList")) ;
-displayData();
+if (localStorage.getItem("coursesList") == null) {
+  var courses = [];
+} else {
+  var courses = JSON.parse(localStorage.getItem("coursesList"));
+  displayData();
 }
 
 addBtn.onclick = function () {
@@ -43,7 +43,7 @@ function addCourse() {
   //Add object course to array courses
   courses.push(course);
   //Add array courses to localstorage
-  localStorage.setItem("coursesList",JSON.stringify(courses));
+  localStorage.setItem("coursesList", JSON.stringify(courses));
 }
 
 // create function display data on click button Add course
@@ -73,8 +73,29 @@ function clearForm() {
 }
 
 //create function that allow the user to delete course inforamtion (from the table)
-function deleteCourse(index){
-  courses.splice(index,1);
-  localStorage.setItem("coursesList",JSON.stringify(courses));
+function deleteCourse(index) {
+  courses.splice(index, 1);
+  localStorage.setItem("coursesList", JSON.stringify(courses));
   displayData();
+}
+
+//create function search to search about courses and display the result
+function search(value) {
+  //Add course to the body of the table
+  var result = "";
+  for (i = 0; i < courses.length; i++) {
+    if (courses[i].name.toLowerCase().includes(value.toLowerCase())) {
+      result += `
+    <tr>
+      <td>${i + 1}</td>
+      <td>${courses[i].name}</td>
+      <td>${courses[i].category}</td>
+      <td>${courses[i].price}</td>
+      <td>${courses[i].description}</td>
+      <td><button class="update">Update</button></td>
+      <td><button class="delete" onclick="deleteCourse(${i})">Delete</button></td>
+      </tr>`;
+    }
+  }
+  data.innerHTML = result;
 }
