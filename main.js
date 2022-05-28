@@ -13,6 +13,7 @@ var data = document.getElementById("data");
 //var to catch all the inputs
 var inputs = document.getElementsByClassName("inputs");
 
+var currentIndex = 0;
 //Get Item from local storage then display data
 if (localStorage.getItem("coursesList") == null) {
   var courses = [];
@@ -22,9 +23,11 @@ if (localStorage.getItem("coursesList") == null) {
 }
 
 addBtn.onclick = function () {
-  if(addBtn.innerHTML="Add Course")
-  addCourse();
-  else updateCourse();
+  if (addBtn.innerHTML == "Add Course") {
+    addCourse();
+  } else {
+    updateCourse();
+  }
   displayData();
   clearForm();
 };
@@ -109,5 +112,11 @@ function getCourseData(index) {
   courseCategoryInput.value = course.category;
   coursePriceInput.value = course.price;
   courseDescriptionInput.value = course.description;
-  addBtn.innerHTML='Update';
+  addBtn.innerHTML = "Update";
+  currentIndex = index;
+}
+
+//function to update inputs value
+function updateCourse() {
+  console.log("hhh");
 }
