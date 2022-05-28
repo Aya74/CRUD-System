@@ -22,7 +22,9 @@ if (localStorage.getItem("coursesList") == null) {
 }
 
 addBtn.onclick = function () {
+  if(addBtn.innerHTML="Add Course")
   addCourse();
+  else updateCourse();
   displayData();
   clearForm();
 };
