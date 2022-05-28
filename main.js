@@ -58,7 +58,7 @@ function displayData() {
       <td>${courses[i].category}</td>
       <td>${courses[i].price}</td>
       <td>${courses[i].description}</td>
-      <td><button class="update">Update</button></td>
+      <td><button class="update" onclick="getCourseData(${i})">Update</button></td>
       <td><button class="delete" onclick="deleteCourse(${i})">Delete</button></td>
       </tr>`;
   }
@@ -92,10 +92,20 @@ function search(value) {
       <td>${courses[i].category}</td>
       <td>${courses[i].price}</td>
       <td>${courses[i].description}</td>
-      <td><button class="update">Update</button></td>
+      <td><button class="update" onclick="getCourseData(${i})">Update</button></td>
       <td><button class="delete" onclick="deleteCourse(${i})">Delete</button></td>
       </tr>`;
     }
   }
   data.innerHTML = result;
+}
+
+//get the data on the inputs
+function getCourseData(index) {
+  course = courses[index];
+  courseNameInput.value = course.name;
+  courseCategoryInput.value = course.category;
+  coursePriceInput.value = course.price;
+  courseDescriptionInput.value = course.description;
+  addBtn.innerHTML='Update';
 }
