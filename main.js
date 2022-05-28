@@ -118,5 +118,15 @@ function getCourseData(index) {
 
 //function to update inputs value
 function updateCourse() {
-  console.log("hhh");
+  var course = {
+    name: courseNameInput.value,
+    category: courseCategoryInput.value,
+    price: coursePriceInput.value,
+    description: courseDescriptionInput.value,
+  };
+  courses[currentIndex].name = course.name;
+  courses[currentIndex].category = course.category;
+  courses[currentIndex].price = course.price;
+  courses[currentIndex].description = course.description;
+  localStorage.setItem("coursesList", JSON.stringify(courses));
 }
