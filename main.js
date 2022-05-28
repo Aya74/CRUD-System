@@ -13,6 +13,7 @@ var data = document.getElementById("data");
 //var to catch all the inputs
 var inputs = document.getElementsByClassName("inputs");
 
+var currentIndex = 0;
 //Get Item from local storage then display data
 if (localStorage.getItem("coursesList") == null) {
   var courses = [];
@@ -22,7 +23,11 @@ if (localStorage.getItem("coursesList") == null) {
 }
 
 addBtn.onclick = function () {
-  addCourse();
+  if (addBtn.innerHTML == "Add Course") {
+    addCourse();
+  } else {
+    updateCourse();
+  }
   displayData();
   clearForm();
 };
@@ -58,7 +63,7 @@ function displayData() {
       <td>${courses[i].category}</td>
       <td>${courses[i].price}</td>
       <td>${courses[i].description}</td>
-      <td><button class="update">Update</button></td>
+      <td><button class="update" onclick="getCourseData(${i})">Update</button></td>
       <td><button class="delete" onclick="deleteCourse(${i})">Delete</button></td>
       </tr>`;
   }
@@ -92,10 +97,36 @@ function search(value) {
       <td>${courses[i].category}</td>
       <td>${courses[i].price}</td>
       <td>${courses[i].description}</td>
-      <td><button class="update">Update</button></td>
+      <td><button class="update" onclick="getCourseData(${i})">Update</button></td>
       <td><button class="delete" onclick="deleteCourse(${i})">Delete</button></td>
       </tr>`;
     }
   }
   data.innerHTML = result;
+}
+
+//get the data on the inputs
+function getCourseData(index) {
+  course = courses[index];
+  courseNameInput.value = course.name;
+  courseCategoryInput.value = course.category;
+  coursePriceInput.value = course.price;
+  courseDescriptionInput.value = course.description;
+  addBtn.innerHTML = "Update";
+  currentIndex = index;
+}
+
+//function to update inputs value
+function updateCourse() {
+  var course = {
+    name: courseNameInput.value,
+    category: courseCategoryInput.value,
+    price: coursePriceInput.value,
+    description: courseDescriptionInput.value,
+  };
+  courses[currentIndex].name = course.name;
+  courses[currentIndex].category = course.category;
+  courses[currentIndex].price = course.price;
+  courses[currentIndex].description = course.description;
+  localStorage.setItem("coursesList", JSON.stringify(courses));
 }
