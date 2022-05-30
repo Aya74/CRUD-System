@@ -66,3 +66,7 @@ td {
     background-color: transparent;
     color: rgb(131, 186, 231);
 }
+
+.required{
+    color: red;
+}
