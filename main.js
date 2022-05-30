@@ -129,4 +129,5 @@ function updateCourse() {
   courses[currentIndex].price = course.price;
   courses[currentIndex].description = course.description;
   localStorage.setItem("coursesList", JSON.stringify(courses));
+  addBtn.innerHTML="Add Course"
 }
