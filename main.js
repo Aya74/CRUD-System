@@ -12,6 +12,8 @@ var courses = [];
 var data = document.getElementById("data");
 //var to catch all the inputs
 var inputs = document.getElementsByClassName("inputs");
+//var for alert
+var nameAlert = document.getElementById("nameAlert");
 
 var currentIndex = 0;
 //Get Item from local storage then display data
@@ -129,5 +131,20 @@ function updateCourse() {
   courses[currentIndex].price = course.price;
   courses[currentIndex].description = course.description;
   localStorage.setItem("coursesList", JSON.stringify(courses));
-  addBtn.innerHTML="Add Course"
+  addBtn.innerHTML = "Add Course";
 }
+
+// Validate course name input
+courseName.onkeyup = function () {
+  var namePattern = /^[A-Z][a-z]{2,8}$/;
+  if (namePattern.test(courseName.value)) {
+    addBtn.removeAttribute("disabled");
+    courseName.classList.add("is-valid");
+    courseName.classList.remove("is-invalid");
+    nameAlert.classList.add("d-none");
+  } else {
+    addBtn.disabled = "true";
+    courseName.classList.add("is-invalid");
+    nameAlert.classList.remove("d-none");
+  }
+};
