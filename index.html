@@ -17,13 +17,15 @@
     <div class="add-course">
         <div class="container">
             <h1>CRUD System</h1>
-            <label for="">course name</label> <span class="required">*</span>
-            <input class="inputs form-control" type="text" placeholder="cource name" id="courseName">
+            <label for="courseName">course name</label> <span class="required">*</span>
+            <input class="inputs form-control" type="text" placeholder="cource name" id="courseName" name="courseName">
             <div class="alert alert-danger d-none" id="nameAlert">Please start with capital letter</div>
-            <label for="">course category</label> <span class="required">*</span>
-            <input class="inputs form-control" type="text" placeholder="cource category" id="courseCategory">
-            <label for="">course price</label> <span class="required">*</span>
-            <input class="inputs form-control" type="number" placeholder="cource price" id="coursePrice">
+            <label for="courseCategory">course category</label> <span class="required">*</span>
+            <input class="inputs form-control" type="text" placeholder="cource category" id="courseCategory"
+                name="courseCategory">
+            <label for="coursePrice">course price</label> <span class="required">*</span>
+            <input class="inputs form-control" type="number" placeholder="cource price" id="coursePrice"
+                name="coursePrice">
             <label for="">course description</label> <span class="required">*</span>
             <textarea class="inputs form-control" placeholder="course description" id="courseDescription"></textarea>
             <button id="click" disabled>Add Course</button>
@@ -31,23 +33,23 @@
         </div>
     </div>
     <div class="div2 container">
-    <input type="search" placeholder="search... " id="search" onkeyup="search(this.value)">
-    <table class="table caption-top">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Category</th>
-            <th scope="col">Price</th>
-            <th scope="col">Description</th>
-            <th scope="col">Update</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody id="data">
-          
-        </tbody>
-      </table>
+        <input type="search" placeholder="search... " id="search" onkeyup="search(this.value)">
+        <table class="table caption-top">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+        </table>
     </div>
     <!-- JS bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
