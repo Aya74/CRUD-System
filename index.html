@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD System</title>
+    <!-- css bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- custome style -->
     <link rel="stylesheet" href="style.css">
-    <!-- fontawesome link -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.3/sweetalert2.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,7 +26,7 @@
             <input class="inputs" type="number" placeholder="cource price" id="coursePrice">
             <label for="">course description</label> <span class="required">*</span>
             <textarea class="inputs" placeholder="course description" id="courseDescription"></textarea>
-            <button id="click">Add Course</button>
+            <button id="click" disabled>Add Course</button>
             <button id="clear" type="reset">clear</button>
         </div>
     </div>
@@ -48,9 +47,10 @@
 
         </tbody>
     </table>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.3/sweetalert2.min.js"
-        integrity="sha512-F3F53+tMh/CBxMQ60GN5R4EiFW7PcuND+9IDC3Qpkwc7SfxgzHigRdUO3+2+mNal2ot3Wp6KR0zx8r8BbsW+Bg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JS bootstrap link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 
     <script src="main.js"></script>
 </body>
