@@ -10,6 +10,10 @@ textarea {
     margin: auto;
 }
 
+.div2 {
+    width: 82%;
+}
+
 .add-course {
     width: 80%;
     margin: auto;
@@ -22,7 +26,7 @@ button {
     background-color: #ffffff;
     border: 1px solid black;
     color: #a2a2a2;
-    width: 93px;
+    width: 120px;
     margin-bottom: 10px;
     height: 30px;
     transition: 1px;
@@ -36,7 +40,7 @@ button:hover {
 th,
 td {
     width: 200px;
-    text-align: center;    
+    text-align: center;
 }
 
 .delete {
@@ -45,10 +49,10 @@ td {
     color: white;
     border-radius: 5px;
     margin-top: 10px;
-    transition:.4s all;
+    transition: .4s all;
 }
 
-.delete:hover{
+.delete:hover {
     background-color: transparent;
     color: red;
 }
@@ -59,10 +63,14 @@ td {
     color: white;
     border-radius: 5px;
     margin-top: 10px;
-    transition:.4s all;
+    transition: .4s all;
 }
 
-.update:hover{
+.update:hover {
     background-color: transparent;
     color: rgb(131, 186, 231);
+}
+
+.required {
+    color: red;
 }
