@@ -23,11 +23,14 @@
             <label for="courseCategory">course category</label> <span class="required">*</span>
             <input class="inputs form-control" type="text" placeholder="cource category" id="courseCategory"
                 name="courseCategory">
+            <div class="alert alert-danger d-none" id="cateAlert">Please start with capital letter</div>
             <label for="coursePrice">course price</label> <span class="required">*</span>
             <input class="inputs form-control" type="number" placeholder="cource price" id="coursePrice"
                 name="coursePrice">
+            <div class="alert alert-danger d-none" id="priceAlert">Please enter numbers only</div>
             <label for="">course description</label> <span class="required">*</span>
             <textarea class="inputs form-control" placeholder="course description" id="courseDescription"></textarea>
+            <div class="alert alert-danger d-none" id="descAlert">Please start with capital letter</div>
             <button id="click" disabled>Add Course</button>
             <button id="clear" type="reset">clear</button>
         </div>
