@@ -1,3 +1,10 @@
+/* body style */
+body {
+    background-color: #f1faeece;
+    color: #223f68;
+}
+
+/* style inputs and textarea */
 input,
 textarea {
     display: block;
@@ -6,15 +13,18 @@ textarea {
     resize: none;
 }
 
+/* style CRUD form container */
 .container {
     width: 40%;
     margin: auto;
 }
 
+/* style the div that contains the search input and course table information */
 .div2 {
     width: 82%;
 }
 
+/* style the div that contains the course inputs */
 .add-course {
     width: 80%;
     margin: auto;
@@ -23,19 +33,34 @@ textarea {
     text-align: center;
 }
 
+/* style Add course and clear button */
 .add-course button {
     background-color: #ffffff;
-    border: 1px solid black;
-    color: #a2a2a2;
+    border: 1px solid rgb(240, 235, 235);
+    color: #696969;
     width: 120px;
     margin-bottom: 10px;
     height: 30px;
     transition: 1px;
 }
 
+/* Add hover to Add course and clear button */
 button:hover {
-    background-color: #575757;
+    background-color: #223f68;
     color: white;
+}
+
+input[type="search"] {
+    border: 1px solid #b1becf;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* styling thead and the cell of the body */
+th {
+    color: #1D3557;
 }
 
 th,
@@ -44,6 +69,7 @@ td {
     text-align: center;
 }
 
+/* styling delete button */
 .delete {
     border: 1px solid red;
     background-color: red;
@@ -58,6 +84,7 @@ td {
     color: red;
 }
 
+/* styling update button */
 .update {
     border: 1px solid rgb(131, 186, 231);
     background-color: rgb(131, 186, 231);
@@ -72,6 +99,7 @@ td {
     color: rgb(131, 186, 231);
 }
 
+/* span for star * for required inputs */
 .required {
     color: red;
 }
