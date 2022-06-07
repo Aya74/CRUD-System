@@ -57,6 +57,13 @@ function addCourse() {
   courses.push(course);
   //Add array courses to localstorage
   localStorage.setItem("coursesList", JSON.stringify(courses));
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Your work has been added",
+    showConfirmButton: false,
+    timer: 1500,
+  });
 }
 
 // create function display data on click button Add course
@@ -91,11 +98,26 @@ function clearForm() {
   isINValid();
 }
 
-//create function that allow the user to delete course inforamtion (from the table)
+//create function that allow the user to delete course information (from the table)
 function deleteCourse(index) {
-  courses.splice(index, 1);
-  localStorage.setItem("coursesList", JSON.stringify(courses));
-  displayData();
+  //sweet alert
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      //if the user confirm to delete then delete the course
+      courses.splice(index, 1);
+      localStorage.setItem("coursesList", JSON.stringify(courses));
+      displayData();
+      Swal.fire("Deleted!", "The course has been deleted.", "success");
+    }
+  });
 }
 
 //create function search to search about courses and display the result
@@ -144,10 +166,17 @@ function updateCourse() {
   courses[currentIndex].description = course.description;
   localStorage.setItem("coursesList", JSON.stringify(courses));
   addBtn.innerHTML = "Add Course";
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Your work has been updated",
+    showConfirmButton: false,
+    timer: 1500,
+  });
 }
 
 // Validate course name input
-var namePattern = /^[A-Z][a-z]{2,8}$/;
+var namePattern = /^[A-Z\s][\sa-z]{2,20}$/;
 courseName.onkeyup = function () {
   if (namePattern.test(courseName.value)) {
     courseName.classList.add("is-valid");
@@ -221,7 +250,7 @@ function validate() {
 }
 
 //function to remove is-valide class
-function isValid(){
+function isValid() {
   courseName.classList.remove("is-valid");
   courseCategory.classList.remove("is-valid");
   coursePrice.classList.remove("is-valid");
@@ -229,7 +258,7 @@ function isValid(){
 }
 
 //function to remove is-invalide class
-function isINValid(){
+function isINValid() {
   courseName.classList.remove("is-invalid");
   courseCategory.classList.remove("is-invalid");
   coursePrice.classList.remove("is-invalid");
