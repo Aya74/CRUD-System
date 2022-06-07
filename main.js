@@ -96,6 +96,8 @@ function clearForm() {
   isValid();
   //if course inputs in in-valid clear
   isINValid();
+  //When click on clear button make alert (error msg) display none
+  noneAlert();
 }
 
 //create function that allow the user to delete course information (from the table)
@@ -263,4 +265,12 @@ function isINValid() {
   courseCategory.classList.remove("is-invalid");
   coursePrice.classList.remove("is-invalid");
   courseDescription.classList.remove("is-invalid");
+}
+
+//function to make alert error msg display none
+function noneAlert() {
+  nameAlert.style.display = "none";
+  cateAlert.style.display = "none";
+  priceAlert.style.display = "none";
+  descAlert.style.display = "none";
 }
