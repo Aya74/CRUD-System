@@ -91,11 +91,31 @@ function clearForm() {
   isINValid();
 }
 
-//create function that allow the user to delete course inforamtion (from the table)
+//create function that allow the user to delete course information (from the table)
 function deleteCourse(index) {
-  courses.splice(index, 1);
-  localStorage.setItem("coursesList", JSON.stringify(courses));
-  displayData();
+  //sweet alert 
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      //if the user confirm to delete then delete the course
+      courses.splice(index, 1);
+      localStorage.setItem("coursesList", JSON.stringify(courses));
+      displayData();
+      Swal.fire(
+        'Deleted!',
+        'The course has been deleted.',
+        'success'
+      )
+    }
+  })
+
 }
 
 //create function search to search about courses and display the result
