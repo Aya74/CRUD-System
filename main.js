@@ -167,7 +167,7 @@ function updateCourse() {
 }
 
 // Validate course name input
-var namePattern = /^[A-Z][a-z]{2,8}$/;
+var namePattern = /^[A-Z\s][\sa-z]{2,20}$/;
 courseName.onkeyup = function () {
   if (namePattern.test(courseName.value)) {
     courseName.classList.add("is-valid");
